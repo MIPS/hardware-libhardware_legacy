@@ -23,8 +23,10 @@ gps_find_hardware( void )
 #ifdef HAVE_GPS_HARDWARE
     sGpsInterface = gps_get_hardware_interface();
 #endif
-    if (!sGpsInterface)
-        LOGD("no GPS hardware on this device\n");
+    if (!sGpsInterface) {
+        LOGD("no GPS hardware on this device, using fake GPS\n");
+        sGpsInterface = gps_get_fake_interface();
+    }
 }
 
 const GpsInterface*

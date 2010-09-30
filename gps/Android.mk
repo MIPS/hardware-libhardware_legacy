@@ -14,5 +14,5 @@ ifeq ($(USE_QEMU_GPS_HARDWARE),true)
     LOCAL_SRC_FILES += gps/gps_qemu.c
 endif
 
-LOCAL_SRC_FILES += gps/gps.cpp
+LOCAL_SRC_FILES += gps/gps.cpp gps/gps_fake.c
 

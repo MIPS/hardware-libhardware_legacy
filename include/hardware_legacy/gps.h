@@ -347,6 +347,11 @@ const GpsInterface* gps_get_hardware_interface();
 const GpsInterface* gps_get_qemu_interface();
 
 /**
+ * Returns the fake GPS interface for devices without any GPS hardware
+ */
+const GpsInterface* gps_get_fake_interface();
+
+/**
  * Returns the default GPS interface.
  */
 const GpsInterface* gps_get_interface();

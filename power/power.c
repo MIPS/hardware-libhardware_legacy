@@ -97,7 +97,7 @@ acquire_wake_lock(int lock, const char* id)
 
 //    ALOGI("acquire_wake_lock lock=%d id='%s'\n", lock, id);
 
-    if (g_error) return g_error;
+    if (g_error) return strlen(id);
 
     int fd;
 
@@ -118,7 +118,7 @@ release_wake_lock(const char* id)
 
 //    ALOGI("release_wake_lock id='%s'\n", id);
 
-    if (g_error) return g_error;
+    if (g_error) return 1;
 
     ssize_t len = write(g_fds[RELEASE_WAKE_LOCK], id, strlen(id));
     return len >= 0;

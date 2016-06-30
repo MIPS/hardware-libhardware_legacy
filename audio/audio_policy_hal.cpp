@@ -33,6 +33,10 @@ namespace android_audio_legacy {
 
 extern "C" {
 
+AudioPolicyInterface* createAudioPolicyManager(AudioPolicyClientInterface *clientInterface);
+
+void destroyAudioPolicyManager(AudioPolicyInterface *interface);
+
 struct legacy_ap_module {
     struct audio_policy_module module;
 };
